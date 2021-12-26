@@ -13,6 +13,7 @@ updates:
     commit-message:
       prefix: "GitHubActions"
       include: "scope"
+    target-branch: "dev"
 
   # Nuget packages
   - package-ecosystem: "nuget"
@@ -26,3 +27,4 @@ updates:
     commit-message:
       prefix: "NuGet"
       include: "scope"
+    target-branch: "dev"
