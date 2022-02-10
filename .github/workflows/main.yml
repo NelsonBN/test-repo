@@ -1,7 +1,7 @@
-name: 'Main Pull request'
+name: 'Main branch'
 
 on:
-  pull_request:
+  push:
     branches: [ main ]
 
 jobs:
