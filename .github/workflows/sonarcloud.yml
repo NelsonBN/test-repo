@@ -30,7 +30,7 @@ jobs:
       uses: actions/setup-java@v3.0.0
       with:
         distribution: 'adopt'
-        java-version: 1.11
+        java-version: ${{ matrix.java }}
 
     - uses: actions/checkout@v2
       with:
