@@ -1,11 +1,9 @@
 name: 'Tests'
 
 on:
-  push:
-    branches:
-      - develop
-    paths-ignore:
-        - "*.md"
+  pull_request:
+    branches: [main]
+    types: [labeled]
 
 
 jobs:
@@ -13,6 +11,7 @@ jobs:
   test-project:
     name: "Testing project"
     runs-on: ubuntu-latest
+    if: contains(github.event.pull_request.labels.*.name, 'deploy-nuget')
 
     steps:
     - uses: actions/checkout@v3
@@ -30,3 +29,12 @@ jobs:
 
     - name: Test
       run: dotnet test --no-build
+
+
+  test2:
+    name: "Second etst"
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Test
+      run: echo "Hello github"
