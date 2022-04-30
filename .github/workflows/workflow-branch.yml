@@ -1,0 +1,16 @@
+name: 'Workflow test branch'
+
+on:
+  pull_request:
+    types: [labeled]
+
+jobs:
+
+  wordpress:
+    name: "wordpress project"
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Test
+      run: echo "Run wordpress project"
+
