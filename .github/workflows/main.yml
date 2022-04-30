@@ -20,7 +20,7 @@ jobs:
   build:
     name: "Building project"
     runs-on: ubuntu-latest
-    if: contains(github.event.push.labels.*.name, 'build')
+    if: contains(github.event.pull_request.labels.*.name, 'build')
 
     steps:
     - name: Test
@@ -30,7 +30,7 @@ jobs:
   deploy:
     name: "Deploying project"
     runs-on: ubuntu-latest
-    if: contains(github.event.push.labels.*.name, 'deploy-nuget')
+    if: contains(github.event.pull_request.labels.*.name, 'deploy-nuget')
 
     steps:
     - name: Test
