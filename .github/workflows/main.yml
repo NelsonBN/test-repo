@@ -36,5 +36,3 @@ jobs:
     steps:
     - name: Test
       run: echo "Run deploy project"
-
-
